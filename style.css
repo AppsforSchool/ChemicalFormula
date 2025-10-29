@@ -123,6 +123,8 @@ sub {
   background-color: #09a318;
   color: white;
   height: 100%;
+
+  touch-action: manipulation;
 }
 
 #element-add {
@@ -149,6 +151,8 @@ sub {
   border-radius: 8px;
   background-color: #09a318;
   color: white;
+
+  touch-action: manipulation;
 }
 
 .element-minus-button {
@@ -163,4 +167,6 @@ sub {
   border-radius: 8px;
   background-color: #c7f2cc;
   color: #09a318;
+
+  touch-action: manipulation;
 }
