@@ -106,8 +106,8 @@ sub {
   color: #b3b3b3;
 }
 
-#answer-text.correct span.sub.element-zero {
-  color: white;
+#answer-text.correct span sub.element-zero {
+  color: #68cb72;
   
 }
 
