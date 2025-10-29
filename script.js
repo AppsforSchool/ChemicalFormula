@@ -65,6 +65,8 @@ function startCountdown() {
   const countdownOverlay = document.getElementById('countdown-overlay');
   const countdownTimer = document.getElementById('countdown-timer');
   const questionContainer = document.getElementById('question-container');
+
+  countdownTimer.classList.remove('loading');
   
   let count = 3;
 
