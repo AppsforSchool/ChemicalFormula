@@ -38,6 +38,8 @@
   },
 ];*/
 
+let formulasData = [];
+
 fetch('./formulas.json')
   .then(response => {
     // 応答が正常であることを確認
@@ -48,7 +50,7 @@ fetch('./formulas.json')
   })
   .then(data => {
     // 取得したデータを定数に格納
-    const formulasData = data;
+    formulasData = data;
   })
   .catch(error => {
     console.error('JSONファイルの取得に失敗しました:', error);
