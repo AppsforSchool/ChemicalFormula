@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "BIZ UDGothic", sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+sub {
+  font-size: 0.7em;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#countdown-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* 半透明の黒い背景 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* 他のコンテンツの上に表示 */
+}
+
+/* カウントダウンタイマーのテキスト */
+#countdown-timer {
+  font-size: 10rem;
+  color: white;
+}
+
+/* 最初は非表示にするクラス */
+.hidden {
+  display: none;
+}
+
+#question-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#element-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.answer-area {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+#answer-text {
+  font-family: "Signika Negative", sans-serif;
+  font-weight: 700;
+  
+  font-size: 3rem;
+  padding: 0.2rem 3rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+#answer-text.correct {
+  background-color: #e6f7e9;
+  border: 2px solid #09a318;
+  color: #09a318;
+}
+
+.answer-ButtonAndText {
+  display: flex;
+  flex-direction: column;
+}
+
+.element-zero {
+  color: #b3b3b3;
+}
+
+#answer-text.correct span.sub.element-zero {
+  color: white;
+  
+}
+
+#answer-sub-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+#answer-check-button {
+  font-family: "BIZ UDGothic", sans-serif;
+  font-weight: 700;
+  
+  font-size: 1.5rem;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  border: 2px solid #09a318;
+  border-radius: 8px;
+  background-color: #09a318;
+  color: white;
+  height: 100%;
+}
+
+#element-add {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.element-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.element-add-button {
+  font-family: "Signika Negative", sans-serif;
+  font-weight: 600;
+  
+  font-size: 2rem;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  border: 2px solid #09a318;
+  border-radius: 8px;
+  background-color: #09a318;
+  color: white;
+}
+
+.element-minus-button {
+  font-family: "BIZ UDGothic", sans-serif;
+  font-weight: 700;
+  
+  font-size: 2rem;
+  padding: 0rem;
+  width: 50%;
+  cursor: pointer;
+  border: 2px solid #09a318;
+  border-radius: 8px;
+  background-color: #c7f2cc;
+  color: #09a318;
+}

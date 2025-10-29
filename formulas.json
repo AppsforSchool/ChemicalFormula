@@ -1,0 +1,124 @@
+{
+    "name": "二酸化炭素",
+    "formula": [
+      {"substance": "C", "count": 1, "type": 0},
+      {"substance": "O", "count": 2, "type": 0}
+    ]
+  },
+  {
+    "name": "水",
+    "formula": [
+      {"substance": "H", "count": 2, "type": 0},
+      {"substance": "O", "count": 1, "type": 0},
+    ]
+  },
+  {
+    "name": "塩化ナトリウム",
+    "formula": [
+      {"substance": "Na", "count": 1, "type": 0},
+      {"substance": "Cl", "count": 1, "type": 0},
+    ]
+  },
+  {
+    "name": "炭酸水素ナトリウム",
+    "formula": [
+      {"substance": "Na", "count": 1, "type": 0},
+      {"substance": "H", "count": 1, "type": 0},
+      {"substance": "C", "count": 1, "type": 0},
+      {"substance": "O", "count": 3, "type": 0},
+    ]
+  },
+  {
+    "name": "炭酸ナトリウム",
+    "formula": [
+      {"substance": "Na", "count": 2, "type": 0},
+      {"substance": "C", "count": 1, "type": 0},
+      {"substance": "O", "count": 3, "type": 0},
+    ]
+  },
+  {
+    "name": "酸化鉄",
+    "formula": [
+      {"substance": "Fe", "count": 1, "type": 0},
+      {"substance": "S", "count": 1, "type": 0},
+    ]
+  },
+  {
+    "name": "酸化銀",
+    "formula": [
+      {"substance": "Ag", "count": 2, "type": 0},
+      {"substance": "O", "count": 1, "type": 0},
+    ]
+  },
+  {
+    "name": "酸化銅",
+    "formula": [
+      {"substance": "Cu", "count": 1, "type": 0},
+      {"substance": "O", "count": 1, "type": 0},
+    ]
+  },
+  {
+    "name": "酸化マグネシウム",
+    "formula": [
+      {"substance": "Mg", "count": 1, "type": 0},
+      {"substance": "O", "count": 1, "type": 0},
+    ]
+  },
+  {
+    "name": "塩酸",
+    "formula": [
+      {"substance": "H", "count": 1, "type": 0},
+      {"substance": "Cl", "count": 1, "type": 0},
+    ]
+  },
+  {
+    "name": "硫酸",
+    "formula": [
+      {"substance": "H", "count": 2, "type": 0},
+      {"substance": "S", "count": 1, "type": 0},
+      {"substance": "O", "count": 4, "type": 0},
+    ]
+  },
+  {
+    "name": "塩化バリウム",
+    "formula": [
+      {"substance": "Ba", "count": 1, "type": 0},
+      {"substance": "Cl", "count": 2, "type": 0},
+    ]
+  },
+  {
+    "name": "硫酸バリウム",
+    "formula": [
+      {"substance": "Ba", "count": 1, "type": 0},
+      {"substance": "S", "count": 1, "type": 0},
+      {"substance": "O", "count": 4, "type": 0},
+    ]
+  },
+  {
+    "name": "メタン",
+    "formula": [
+      {"substance": "C", "count": 1, "type": 0},
+      {"substance": "H", "count": 4, "type": 0},
+    ]
+  },
+  {
+    "name": "過酸化水素",
+    "formula": [
+      {"substance": "H", "count": 2, "type": 0},
+      {"substance": "O", "count": 2, "type": 0},
+    ]
+  },
+  {
+    "name": "水酸化カルシウム",
+    "formula": [
+      {"substance": "Ca", "count": 1, "type": 0},
+      {"substance": "OH", "count": 2, "type": 1},
+    ]
+  },
+  {
+    "name": "プロパン",
+    "formula": [
+      {"substance": "C", "count": 3, "type": 0},
+      {"substance": "H", "count": 8, "type": 0},
+    ]
+  }
