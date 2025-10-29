@@ -65,18 +65,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const countdownTimer = document.getElementById('countdown-timer');
   const questionContainer = document.getElementById('question-container');
   
-  let count = 4;
+  let count = 3;
 
   const countdownInterval = setInterval(() => {
-    
-    count -= 1;
-    countdownTimer.textContent = count -1;
-    if (count === 1) {
-      countdownTimer.textContent = 'Go!';
-    }
-    
     if (count === 0) {
-    
+      countdownTimer.textContent = 'Go!';
+      count -= 1;
+    } else if (count === -1) {
       clearInterval(countdownInterval); // カウントダウンを停止
       
       questions = shuffle(formulasData);
@@ -85,7 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
       
       countdownOverlay.style.display = 'none'; // オーバーレイを非表示
       questionContainer.classList.remove('hidden'); // 問題文を表示
-      
+    } else {
+      countdownTimer.textContent = count;
+      count -= 1;
     }
   }, 1000); // 1秒ごとに実行
 });
