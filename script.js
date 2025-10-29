@@ -42,25 +42,26 @@ let formulasData = [];
 
 fetch('./formulas.json')
   .then(response => {
-    // 応答が正常であることを確認
     if (!response.ok) {
       throw new Error('ネットワーク応答が異常です');
     }
-    return response.json(); // JSONとしてパースする
+    return response.json();
   })
   .then(data => {
-    // 取得したデータを定数に格納
+    // データの読み込みが完了したら、formulasDataに格納
     formulasData = data;
+    // そして、ゲームの開始処理を呼び出す
+    startCountdown();
   })
   .catch(error => {
     console.error('JSONファイルの取得に失敗しました:', error);
+    alert('化学式の読み込みに失敗しました。ページをリロードしてください。');
   });
-
 
 let questions = [];
 
 //countDown
-document.addEventListener('DOMContentLoaded', () => {
+function startCountdown() {
   const countdownOverlay = document.getElementById('countdown-overlay');
   const countdownTimer = document.getElementById('countdown-timer');
   const questionContainer = document.getElementById('question-container');
@@ -72,20 +73,22 @@ document.addEventListener('DOMContentLoaded', () => {
       countdownTimer.textContent = 'Go!';
       count -= 1;
     } else if (count === -1) {
-      clearInterval(countdownInterval); // カウントダウンを停止
+      clearInterval(countdownInterval);
       
+      // データが読み込まれた後にシャッフルと最初の問題表示を行う
       questions = shuffle(formulasData);
-      //console.log(questions);
       changeQuestion(0);
       
-      countdownOverlay.style.display = 'none'; // オーバーレイを非表示
-      questionContainer.classList.remove('hidden'); // 問題文を表示
+      countdownOverlay.style.display = 'none';
+      questionContainer.classList.remove('hidden');
     } else {
       countdownTimer.textContent = count;
       count -= 1;
     }
-  }, 1000); // 1秒ごとに実行
-});
+  }, 1000);
+}
+
+
 
 function shuffle(array) {
   let currentIndex = array.length, randomIndex;
