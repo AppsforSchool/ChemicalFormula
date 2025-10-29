@@ -46,6 +46,9 @@ sub {
   color: white;
 }
 
+#countdown-timer.loading {
+  font-size: 5rem;
+
 /* 最初は非表示にするクラス */
 .hidden {
   display: none;
