@@ -65,8 +65,6 @@ function startCountdown() {
   const countdownOverlay = document.getElementById('countdown-overlay');
   const countdownTimer = document.getElementById('countdown-timer');
   const questionContainer = document.getElementById('question-container');
-
-  countdownTimer.classList.remove('loading');
   
   let count = 3;
 
@@ -84,6 +82,9 @@ function startCountdown() {
       countdownOverlay.style.display = 'none';
       questionContainer.classList.remove('hidden');
     } else {
+      if (count === 3) {
+        countdownTimer.classList.remove('loading');
+      }
       countdownTimer.textContent = count;
       count -= 1;
     }
