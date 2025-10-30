@@ -214,9 +214,13 @@ function answerCheck(index) {
   const answerText = document.getElementById('answer-text');
   const answerSubText = document.getElementById('answer-sub-text');
   const answerButton = document.getElementById('answer-check-button');
-  
-  const nextButton = answerButton.classList.contains('nextQuestion');
-  console.log(nextButton);
+
+  const resultButton = answerButton.classList.contains('toResult');
+  if (resultButton) {
+    
+  } else {
+    const nextButton = answerButton.classList.contains('nextQuestion');
+    console.log(nextButton);
   
   if (nextButton) {
     answerButton.classList.remove('nextQuestion');
@@ -240,12 +244,12 @@ function answerCheck(index) {
       }
     }
     if (perfect) {
+      answerText.classList.add('correct');
+      answerSubText.textContent = "正解！";
       if (questionsIndex + 1 === questions.length) {
-      answerSubText.textContent = "終了！";
       answerButton.textContent = "結果をみる";
+        answerButton.classList.add('toResult');
       } else {
-        answerText.classList.add('correct');
-        answerSubText.textContent = "正解！";
         answerButton.textContent = "次の問題";
         answerButton.classList.add('nextQuestion');
       }
