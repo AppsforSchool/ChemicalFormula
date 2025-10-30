@@ -58,7 +58,7 @@ fetch('./formulas.json')
   })
   .catch(error => {
     console.error('JSONファイルの取得に失敗しました:', error);
-    alert('化学式の読み込みに失敗しました。ページをリロードしてください。');
+    alert('JSONファイルの取得に失敗しました');
   });
 
 let questions = [];
@@ -73,7 +73,7 @@ function startCountdown() {
 
   const countdownInterval = setInterval(() => {
 
-    countdownTimer.classList.remove('loading');
+    //countdownTimer.classList.remove('loading');
     
     if (count === 0) {
       countdownTimer.textContent = 'Go!';
@@ -88,9 +88,9 @@ function startCountdown() {
       countdownOverlay.style.display = 'none';
       questionContainer.classList.remove('hidden');
     } else {
-      /*if (count === 3) {
+      if (count === 3) {
         countdownTimer.classList.remove('loading');
-      }*/
+      }
       countdownTimer.textContent = count;
       count -= 1;
       alert('現在のカウント: ' + count);
@@ -182,33 +182,32 @@ function changeQuestion(index) {
 }
 
 function updateAnswerArea(index,counts) {
-   const answerText = document.getElementById('answer-text');
-   answerText.textContent = "";
+  const answerText = document.getElementById('answer-text');
+  answerText.textContent = "";
   answerText.classList.remove('correct');
   
-   for (let i = 0; i < questions[index].formula.length; i++) {
-     const elementSpan = document.createElement("span");
-     if (counts[i] === 0) {
-       elementSpan.className = "element-zero";
-     }
-     answerText.appendChild(elementSpan);
+  for (let i = 0; i < questions[index].formula.length; i++) {
+    const elementSpan = document.createElement("span");
+    if (counts[i] === 0) {
+      elementSpan.className = "element-zero";
+    }
+    answerText.appendChild(elementSpan);
     
-     let elementText;
-     if (questions[index].formula[i].type === 1 && counts[i] > 1) {
-       elementText = document.createTextNode(`(${questions[index].formula[i].substance})`);
-     } else {
-       elementText = document.createTextNode(questions[index].formula[i].substance);
-     }
+    let elementText;
+    if (questions[index].formula[i].type === 1 && counts[i] > 1) {
+      elementText = document.createTextNode(`(${questions[index].formula[i].substance})`);
+    } else {
+      elementText = document.createTextNode(questions[index].formula[i].substance);
+    }
      
-     const subElement = document.createElement('sub');
-     subElement.textContent = counts[i];
-     if (counts[i] === 1) {
-       subElement.className = "element-zero";
-     }
-     
+    const subElement = document.createElement('sub');
+    subElement.textContent = counts[i];
+    if (counts[i] === 1) {
+      subElement.className = "element-zero";
+    }
     
-     elementSpan.appendChild(elementText);
-     elementSpan.appendChild(subElement);
+    elementSpan.appendChild(elementText);
+    elementSpan.appendChild(subElement);
    }
 }
 
@@ -230,39 +229,40 @@ function answerCheck(index) {
     const nextButton = answerButton.classList.contains('nextQuestion');
     console.log(nextButton);
   
-  if (nextButton) {
-    answerButton.classList.remove('nextQuestion');
-    answerSubText.textContent = "";
-    answerButton.textContent = "答える";
-    answerText.classList.remove('correct');
+    if (nextButton) {
+      answerButton.classList.remove('nextQuestion');
+      answerSubText.textContent = "";
+      answerButton.textContent = "答える";
+      answerText.classList.remove('correct');
     
-    elementCount.length = 0;
-    questionsIndex += 1;
-    changeQuestion(questionsIndex);
-  } else {
-    let perfect = true;
-    for (let i = 0; i < elementCount.length; i++) {
-      const answerCount = questions[index].formula[i].count;
-      const nowCount = elementCount[i];
-      if (answerCount === nowCount) {
-        
-      } else {
-        perfect = false;
-        break;
-      }
-    }
-    if (perfect) {
-      answerText.classList.add('correct');
-      answerSubText.textContent = "正解！";
-      if (questionsIndex + 1 === questions.length) {
-      answerButton.textContent = "結果をみる";
-        answerButton.classList.add('toResult');
-      } else {
-        answerButton.textContent = "次の問題";
-        answerButton.classList.add('nextQuestion');
-      }
+      elementCount.length = 0;
+      questionsIndex += 1;
+      changeQuestion(questionsIndex);
     } else {
-      answerSubText.textContent = "不正解...";
+      let perfect = true;
+      for (let i = 0; i < elementCount.length; i++) {
+        const answerCount = questions[index].formula[i].count;
+        const nowCount = elementCount[i];
+        if (answerCount === nowCount) {
+        
+        } else {
+          perfect = false;
+          break;
+        }
+      }
+      if (perfect) {
+        answerText.classList.add('correct');
+        answerSubText.textContent = "正解！";
+        if (questionsIndex + 1 === questions.length) {
+          answerButton.textContent = "結果をみる";
+          answerButton.classList.add('toResult');
+        } else {
+          answerButton.textContent = "次の問題";
+          answerButton.classList.add('nextQuestion');
+        }
+      } else {
+        answerSubText.textContent = "不正解...";
+      }
     }
   }
 }
