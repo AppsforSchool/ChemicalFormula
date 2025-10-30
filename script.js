@@ -44,13 +44,16 @@ fetch('./formulas.json')
   .then(response => {
     if (!response.ok) {
       throw new Error('ネットワーク応答が異常です');
+      alert('ネットワーク応答が異常です');
     }
     return response.json();
   })
   .then(data => {
     // データの読み込みが完了したら、formulasDataに格納
+    alert('data loaded');
     formulasData = data;
     // そして、ゲームの開始処理を呼び出す
+    alert('カウントダウン開始');
     startCountdown();
   })
   .catch(error => {
@@ -90,6 +93,7 @@ function startCountdown() {
       }*/
       countdownTimer.textContent = count;
       count -= 1;
+      alert('現在のカウント: ' + count);
     }
   }, 1000);
 }
