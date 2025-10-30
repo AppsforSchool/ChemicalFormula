@@ -50,10 +50,10 @@ fetch('./formulas.json')
   })
   .then(data => {
     // データの読み込みが完了したら、formulasDataに格納
-    alert('data loaded');
+    //alert('data loaded');
     formulasData = data;
     // そして、ゲームの開始処理を呼び出す
-    alert('カウントダウン開始');
+    //alert('カウントダウン開始');
     startCountdown();
   })
   .catch(error => {
@@ -93,7 +93,7 @@ function startCountdown() {
       }
       countdownTimer.textContent = count;
       count -= 1;
-      alert('現在のカウント: ' + count);
+      //alert('現在のカウント: ' + count);
     }
   }, 1000);
 }
