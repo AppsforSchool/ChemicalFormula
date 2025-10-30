@@ -69,6 +69,9 @@ function startCountdown() {
   let count = 3;
 
   const countdownInterval = setInterval(() => {
+
+    countdownTimer.classList.remove('loading');
+    
     if (count === 0) {
       countdownTimer.textContent = 'Go!';
       count -= 1;
@@ -82,9 +85,9 @@ function startCountdown() {
       countdownOverlay.style.display = 'none';
       questionContainer.classList.remove('hidden');
     } else {
-      if (count === 3) {
+      /*if (count === 3) {
         countdownTimer.classList.remove('loading');
-      }
+      }*/
       countdownTimer.textContent = count;
       count -= 1;
     }
