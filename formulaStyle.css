@@ -66,6 +66,23 @@ sub {
     text-align: center;
 }
 
+#correct-and-problem {
+  font-size: 1.5rem;
+  border-bottom: 2px solid #ddd;
+  padding: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+#correct-and-problem #now-count {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.mini {
+  font-size: 70%;
+}
+
 #element-text {
   font-size: 2.5rem;
   font-weight: 700;
