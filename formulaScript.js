@@ -82,6 +82,9 @@ function startCountdown() {
       clearInterval(countdownInterval);
       
       // データが読み込まれた後にシャッフルと最初の問題表示を行う
+      const problemCount = document.getElementById('problem-count');
+      problemCount.textContent = questions.length;
+      
       questions = shuffle(formulasData);
       changeQuestion(0);
       
@@ -122,6 +125,9 @@ let questionsIndex = 0;
 let elementCount = [];
 
 function changeQuestion(index) {
+  const nowCount = document.getElementById('now-count');
+  nowCount.textContent = index + 1;
+  
   const elementText = document.getElementById('element-text');
   elementText.textContent = questions[index].name;
   
