@@ -155,9 +155,12 @@ function changeQuestion(index) {
     buttonPlus.className = "element-add-button";
     buttonPlus.textContent = questions[index].formula[i].substance;
     buttonPlus.addEventListener("click", () => {
-      elementCount[i] += 1;
-      console.log(elementCount[i]);
-      updateAnswerArea(questionsIndex,elementCount);
+      //console.log(buttonPlus.classList.contains('inactive'));
+      if (!(buttonPlus.classList.contains('inactive'))) {
+        elementCount[i] += 1;
+        console.log(elementCount[i]);
+        updateAnswerArea(questionsIndex,elementCount);
+      }
     });
     buttonsDiv.appendChild(buttonPlus);
     
@@ -166,12 +169,15 @@ function changeQuestion(index) {
     buttonsDiv.appendChild(buttonMinus);
     buttonMinus.textContent = "-";
     buttonMinus.addEventListener("click", () => {
-      if (0 < elementCount[i]) {
-        elementCount[i] -= 1;
-        console.log(elementCount[i]);
-        updateAnswerArea(questionsIndex,elementCount);
+      //console.log(buttonMinus.classList.contains('inactive'));
+      if (!(buttonMinus.classList.contains('inactive'))) {
+        if (0 < elementCount[i]) {
+          elementCount[i] -= 1;
+          console.log(elementCount[i]);
+          updateAnswerArea(questionsIndex,elementCount);
+        }
       }
-    });
+      });
     
     elementAddArea.appendChild(buttonsDiv);
   }
@@ -279,6 +285,15 @@ function answerCheck(index) {
         }
       }
       if (perfect) {
+        const elementAddButton = document.querySelectorAll('.element-add-button');
+        elementAddButton.forEach(element => {
+          element.classList.add('inactive');
+        });
+        const elementMinusButton = document.querySelectorAll('.element-minus-button');
+        elementMinusButton.forEach(element => {
+          element.classList.add('inactive');
+        });
+        
         answerText.classList.add('correct');
 
         if (answerSubText.textContent === "不正解...") {
