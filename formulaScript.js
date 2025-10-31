@@ -266,3 +266,10 @@ function answerCheck(index) {
     }
   }
 }
+
+document.getElementById('timeAttackButt').addEventListener('click', () => {
+  // 表示画面に遷移（クエリパラメータを付与）
+  if (this.classList.contains('toResult')) {
+    window.location.href = 'result.html';
+  }
+});
