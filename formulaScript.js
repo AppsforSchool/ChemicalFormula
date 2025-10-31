@@ -192,6 +192,7 @@ function updateAnswerArea(index,counts) {
   const answerText = document.getElementById('answer-text');
   answerText.textContent = "";
   answerText.classList.remove('correct');
+  answerText.classList.remove('fail');
   
   for (let i = 0; i < questions[index].formula.length; i++) {
     const elementSpan = document.createElement("span");
@@ -268,6 +269,7 @@ function answerCheck(index) {
           answerButton.classList.add('nextQuestion');
         }
       } else {
+        answerText.classList.add('fail');
         answerSubText.textContent = "不正解...";
       }
     }
