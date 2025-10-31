@@ -113,6 +113,12 @@ sub {
   color: #09a318;
 }
 
+#answer-text.fail {
+  background-color: #ffeded;
+  border: 2px solid #ff0000;
+  color: #ff0000;
+}
+
 .answer-ButtonAndText {
   display: flex;
   flex-direction: column;
@@ -125,6 +131,10 @@ sub {
 #answer-text.correct span sub.element-zero {
   color: #54be5e;
   
+}
+
+#answer-text.fail span sub.element-zero {
+  color: #ff7f7f;
 }
 
 #answer-sub-text {
