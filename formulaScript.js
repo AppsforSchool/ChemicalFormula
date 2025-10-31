@@ -82,7 +82,13 @@ function startCountdown() {
       clearInterval(countdownInterval);
       
       // データが読み込まれた後にシャッフルと最初の問題表示を行う
-      questions = shuffle(formulasData);
+      const urlParams = new URLSearchParams(window.location.search);
+      const doShuffle = urlParams.get('shuffle');
+      if (doShuffle === 'true') {
+        questions = shuffle(formulasData);
+      } else {
+        questions = formulasData;
+      }
       
       const problemCount = document.getElementById('problem-count');
       problemCount.textContent = questions.length;
@@ -233,12 +239,18 @@ function answerCheck(index) {
 
   const resultButton = answerButton.classList.contains('toResult');
   if (resultButton) {
-    const resultData = {
-      gameType: 'formula',
-      shuffle: true,
-      correctCount: correctCount,
-      questionCount: questions.length
-    };
+    let resultData = {
+        gameType: 'formula',
+        shuffle: false,
+        correctCount: correctCount,
+        problemCount: questions.length
+      };
+    const urlParams = new URLSearchParams(window.location.search);
+    const doShuffle = urlParams.get('shuffle');
+    const boolShuffle = (doShuffle === 'true');
+    if (boolShuffle) {
+      resultData.shuffle = true;
+    }
     localStorage.setItem('resultData', JSON.stringify(resultData));
     window.location.href = 'result.html';
   } else {
