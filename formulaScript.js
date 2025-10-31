@@ -224,7 +224,7 @@ function answerCheck(index) {
 
   const resultButton = answerButton.classList.contains('toResult');
   if (resultButton) {
-    
+    window.location.href = 'result.html';
   } else {
     const nextButton = answerButton.classList.contains('nextQuestion');
     console.log(nextButton);
@@ -267,9 +267,9 @@ function answerCheck(index) {
   }
 }
 
-document.getElementById('answer-check-button').addEventListener('click', () => {
+/*document.getElementById('answer-check-button').addEventListener('click', () => {
   // リザルトボタンなら
   if (this.classList.contains('toResult')) {
     window.location.href = 'result.html';
   }
-});
+});*/
