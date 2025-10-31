@@ -124,6 +124,7 @@ function shuffle(array) {
 
 let questionsIndex = 0;
 let elementCount = [];
+let correctCount = 0;
 
 function changeQuestion(index) {
   const nowCount = document.getElementById('now-count');
@@ -232,6 +233,13 @@ function answerCheck(index) {
 
   const resultButton = answerButton.classList.contains('toResult');
   if (resultButton) {
+    const resultData = {
+      gameType: 'formula',
+      shuffle: true,
+      correctCount: correctCount,
+      questionCount: questions.length
+    };
+    localStorage.setItem('resultData', JSON.stringify(resultData));
     window.location.href = 'result.html';
   } else {
     const nextButton = answerButton.classList.contains('nextQuestion');
@@ -260,6 +268,11 @@ function answerCheck(index) {
       }
       if (perfect) {
         answerText.classList.add('correct');
+
+        if (answerSubText.textContent === "不正解...") {
+          correctCount += 1;
+        }
+        
         answerSubText.textContent = "正解！";
         if (questionsIndex + 1 === questions.length) {
           answerButton.textContent = "結果をみる";
