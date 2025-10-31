@@ -101,7 +101,7 @@ sub {
   font-size: 3rem;
   padding: 0.2rem 3rem;
   border: 4px solid #ccc;
-  border-radius: 8px;
+  border-radius: 12px;
   background-color: #f9f9f9;
   color: #333;
   transition: all 0.3s ease;
@@ -109,13 +109,13 @@ sub {
 
 #answer-text.correct {
   background-color: #e6f7e9;
-  border: 2px solid #09a318;
+  border: 4px solid #09a318;
   color: #09a318;
 }
 
 #answer-text.fail {
   background-color: #ffeded;
-  border: 2px solid #ff0000;
+  border: 4px solid #ff0000;
   color: #ff0000;
 }
 
