@@ -136,6 +136,9 @@ sub {
 #answer-text.fail span sub.element-zero {
   color: #ff7f7f;
 }
+#answer-text.fail span.element-zero {
+  color: #ff7f7f;
+}
 
 #answer-sub-text {
   font-size: 1.2rem;
