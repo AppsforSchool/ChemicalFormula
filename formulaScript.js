@@ -234,6 +234,7 @@ function answerCheck(index) {
     let resultData = {
         gameType: 'formula',
         shuffle: false,
+        grade: urlParams.getAll('grade'),
         correctCount: correctCount,
         problemCount: questions.length
       };
