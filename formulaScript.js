@@ -1,65 +1,49 @@
-/*formulasData = [
-  {
-    "name": "二酸化炭素",
-    "formula": [
-      {"substance": "C", "count": 1, "type": 0},
-      {"substance": "O", "count": 2, "type": 0}
-    ]
-  },
-  {
-    "name": "水",
-    "formula": [
-      {"substance": "H", "count": 2, "type": 0},
-      {"substance": "O", "count": 1, "type": 0},
-    ]
-  },
-  {
-    "name": "塩化ナトリウム",
-    "formula": [
-      {"substance": "Na", "count": 1, "type": 0},
-      {"substance": "Cl", "count": 1, "type": 0},
-    ]
-  },
-  {
-    "name": "炭酸水素ナトリウム",
-    "formula": [
-      {"substance": "Na", "count": 1, "type": 0},
-      {"substance": "H", "count": 1, "type": 0},
-      {"substance": "C", "count": 1, "type": 0},
-      {"substance": "O", "count": 3, "type": 0},
-    ]
-  },
-  {
-    "name": "水酸化カルシウム",
-    "formula": [
-      {"substance": "Ca", "count": 1, "type": 0},
-      {"substance": "OH", "count": 2, "type": 1},
-    ]
-  },
-];*/
-
 let formulasData = [];
 
-fetch('./formulas.json')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('ネットワーク応答が異常です');
-      alert('ネットワーク応答が異常です');
+function getGradesFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    // 'grade' パラメータの全ての値を配列として取得
+    return params.getAll('grade');
+}
+
+async function loadFormulasData() {
+    const grades = getGradesFromUrl();
+    const fetchPromises = [];
+
+    // URLパラメータに含まれる学年に応じてフェッチのPromiseを作成
+    if (grades.includes('2')) {
+        fetchPromises.push(fetch('./formula2.json').then(res => res.json()));
     }
-    return response.json();
-  })
-  .then(data => {
-    // データの読み込みが完了したら、formulasDataに格納
-    //alert('data loaded');
-    formulasData = data;
-    // そして、ゲームの開始処理を呼び出す
-    //alert('カウントダウン開始');
-    startCountdown();
-  })
-  .catch(error => {
-    console.error('JSONファイルの取得に失敗しました:', error);
-    alert('JSONファイルの取得に失敗しました');
-  });
+    if (grades.includes('3')) {
+        fetchPromises.push(fetch('./formula3.json').then(res => res.json()));
+    }
+
+    // フェッチ対象がない場合の処理
+    if (fetchPromises.length === 0) {
+      console.warn('URLパラメータに有効な学年 (grade=2 または grade=3) が見つかりませんでした。');
+      // データがない状態での後続処理を開始
+      alert('URLパラメータに有効な学年 (grade=2 または grade=3) が見つかりませんでした。');
+      //startCountdown(); 
+      return;
+    }
+
+    try {
+        // 全てのフェッチが完了するまで待機
+        const results = await Promise.all(fetchPromises);
+        
+        // 取得したデータを一つの配列に結合
+        // results は [dataFrom2, dataFrom3] のような配列になっている
+        formulasData = results.flat(); // .flat() でネストされた配列を平坦化
+
+        // データの読み込みが完了したら後続処理を呼び出す
+        //alert('データロード完了');
+        startCountdown();
+
+    } catch (error) {
+        console.error('JSONファイルの取得または処理に失敗しました:', error);
+        alert('JSONファイルの取得または処理に失敗しました');
+    }
+}
 
 let questions = [];
 
