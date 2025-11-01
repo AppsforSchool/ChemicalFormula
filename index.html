@@ -1,0 +1,82 @@
+<html lang="ja">
+  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>結果</title>
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+  
+<body>
+  <header class="game-header">
+    <p></p>
+    <button id="QR-button">QRコード</button>
+  </header>
+  
+  <div id="qrModal" class="modal">
+    <!-- モーダルのコンテンツ -->
+    <div class="modal-content">
+    <!-- 閉じるボタン -->
+      <span class="close">&times;</span>
+      <p>友達にこのサイトを広めよう！</p>
+      <!-- ここに画像を表示する -->
+      <img src="qrcode.png" alt="QR Code">
+    </div>
+  </div>
+  
+  <main>
+    <div id="selection-container">
+      <p id="selection-title">化学式・化学反応式</p>
+      <p class="select-title">モード</p>
+      <div id="mode-selection">
+        <button class="mode-button active" data-mode="formula">
+        化学式
+      </button>
+      
+        <!--<button class="mode-button" data-mode="reactionFormula">
+        化学反応式
+      </button>-->
+    </div>
+      
+      <span class="split-line"></span>
+      
+      <p class="select-title">出題範囲<span class="mini">(複数可)</span></p>
+      <div id="grade-selection">
+        <button class="grade-button active" data-grade="2">
+        中2
+      </button>
+      
+        <button class="grade-button" data-grade="3">
+        中3
+      </button>
+    </div>
+      
+      <p class="select-title">シャッフル</p>
+      <div id="shuffle-selection">
+        <button class="shuffle-button active" data-shuffle="true">
+        する
+      </button>
+      
+        <button class="shuffle-button" data-shuffle="false">
+        しない
+      </button>
+    </div>
+      
+      <span class="split-line"></span>
+      <button id="start-button">スタート！</button>
+    </div>
+  </main>
+  
+  <footer>
+    <p>QRコードは株式会社デンソーウェーブの登録商標です。</p>
+  </footer>
+</html>
