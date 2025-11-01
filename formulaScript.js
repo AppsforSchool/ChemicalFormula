@@ -45,6 +45,8 @@ async function loadFormulasData() {
     }
 }
 
+loadFormulasData();
+
 let questions = [];
 
 //countDown
