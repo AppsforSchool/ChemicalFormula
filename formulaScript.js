@@ -12,10 +12,10 @@ async function loadFormulasData() {
 
     // URLパラメータに含まれる学年に応じてフェッチのPromiseを作成
     if (grades.includes('2')) {
-        fetchPromises.push(fetch('./formula2.json').then(res => res.json()));
+        fetchPromises.push(fetch('./formulas2.json').then(res => res.json()));
     }
     if (grades.includes('3')) {
-        fetchPromises.push(fetch('./formula3.json').then(res => res.json()));
+        fetchPromises.push(fetch('./formulas3.json').then(res => res.json()));
     }
 
     // フェッチ対象がない場合の処理
