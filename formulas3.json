@@ -1,0 +1,101 @@
+[
+  {
+    "name": "塩化銅",
+    "formula": [
+      {"substance": "Cu", "count": 1, "type": 0},
+      {"substance": "Cl", "count": 2, "type": 0}
+    ]
+  },
+  {
+    "name": "アンモニア",
+    "formula": [
+      {"substance": "N", "count": 1, "type": 0},
+      {"substance": "H", "count": 3, "type": 0}
+    ]
+  },
+  {
+    "name": "硝酸",
+    "formula": [
+      {"substance": "H", "count": 1, "type": 0},
+      {"substance": "N", "count": 1, "type": 0},
+      {"substance": "O", "count": 3, "type": 0}
+    ]
+  },
+  {
+    "name": "炭酸",
+    "formula": [
+      {"substance": "H", "count": 2, "type": 0},
+      {"substance": "C", "count": 1, "type": 0},
+      {"substance": "O", "count": 3, "type": 0}
+    ]
+  },
+  {
+    "name": "酢酸",
+    "formula": [
+      {"substance": "C", "count": 1, "type": 0},
+      {"substance": "H", "count": 3, "type": 0},
+      {"substance": "COOH", "count": 1, "type": 1}
+    ]
+  },
+  {
+    "name": "水酸化ナトリウム",
+    "formula": [
+      {"substance": "Na", "count": 1, "type": 0},
+      {"substance": "OH", "count": 1, "type": 1}
+    ]
+  },
+  {
+    "name": "水酸化バリウム",
+    "formula": [
+      {"substance": "Ba", "count": 1, "type": 0},
+      {"substance": "OH", "count": 2, "type": 1}
+    ]
+  },
+  {
+    "name": "水酸化カリウム",
+    "formula": [
+      {"substance": "K", "count": 1, "type": 0},
+      {"substance": "OH", "count": 1, "type": 1}
+    ]
+  },
+  {
+    "name": "硝酸カリウム",
+    "formula": [
+      {"substance": "K", "count": 1, "type": 0},
+      {"substance": "N", "count": 1, "type": 0},
+      {"substance": "O", "count": 3, "type": 0}
+    ]
+  },
+  {
+    "name": "硝酸銀",
+    "formula": [
+      {"substance": "Ag", "count": 1, "type": 0},
+      {"substance": "N", "count": 1, "type": 0},
+      {"substance": "O", "count": 3, "type": 0}
+    ]
+  },
+  {
+    "name": "硝酸銅",
+    "formula": [
+      {"substance": "Cu", "count": 1, "type": 0},
+      {"substance": "S", "count": 1, "type": 0},
+      {"substance": "O", "count": 4, "type": 0}
+    ]
+  },
+  {
+    "name": "硝酸マグネシウム",
+    "formula": [
+      {"substance": "Mg", "count": 1, "type": 0},
+      {"substance": "S", "count": 1, "type": 0},
+      {"substance": "O", "count": 4, "type": 0}
+    ]
+  },
+  {
+    "name": "硫酸亜鉛",
+    "formula": [
+      {"substance": "Zn", "count": 1, "type": 0},
+      {"substance": "S", "count": 1, "type": 0},
+      {"substance": "O", "count": 4, "type": 0}
+    ]
+  }
+]
