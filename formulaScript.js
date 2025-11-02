@@ -246,7 +246,7 @@ function answerCheck(index) {
     }
     localStorage.setItem('resultData', JSON.stringify(resultData));
       
-    alert(localStorage.getItem('resultData'));
+    //alert(localStorage.getItem('resultData'));
     window.location.href = 'result.html';
   } else {
     const nextButton = answerButton.classList.contains('nextQuestion');
