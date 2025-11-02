@@ -245,7 +245,8 @@ function answerCheck(index) {
       resultData.shuffle = 'true';
     }
     localStorage.setItem('resultData', JSON.stringify(resultData));
-    //alert('リザルト画面へ遷移');
+      
+    alert(localStorage.getItem('resultData'));
     window.location.href = 'result.html';
   } else {
     const nextButton = answerButton.classList.contains('nextQuestion');
