@@ -47,6 +47,9 @@ async function loadFormulasData() {
 
 loadFormulasData();
 
+
+
+
 let questions = [];
 let questionsIndex = 0;
 let elementCount = [];
@@ -116,6 +119,15 @@ function shuffle(array) {
 
   return array;
 }
+
+const returnButton = document.getElementById('return-button');
+returnButton.addEventListener("click", () => {
+  const isConfirmed = window.confirm('本当にやめますか？');
+  if (isConfirmed) {
+    // ブラウザの履歴を1つ戻り、前のページに遷移する
+    window.history.back();
+  }
+});
 
 function changeQuestion(index) {
   const nowCount = document.getElementById('now-count');
