@@ -48,6 +48,9 @@ async function loadFormulasData() {
 loadFormulasData();
 
 let questions = [];
+let questionsIndex = 0;
+let elementCount = [];
+let correctCount = 0;
 
 //countDown
 function startCountdown() {
@@ -113,10 +116,6 @@ function shuffle(array) {
 
   return array;
 }
-
-let questionsIndex = 0;
-let elementCount = [];
-let correctCount = 0;
 
 function changeQuestion(index) {
   const nowCount = document.getElementById('now-count');
@@ -227,10 +226,11 @@ answerButton.addEventListener('click', () => {
 function answerCheck(index) {
   const answerText = document.getElementById('answer-text');
   const answerSubText = document.getElementById('answer-sub-text');
-  const answerButton = document.getElementById('answer-check-button');
+  //const answerButton = document.getElementById('answer-check-button');
 
   const resultButton = answerButton.classList.contains('toResult');
   if (resultButton) {
+    const urlParams = new URLSearchParams(window.location.search);
     let resultData = {
       gameType: 'formula',
       shuffle: 'false',
@@ -238,7 +238,7 @@ function answerCheck(index) {
       correctCount: correctCount,
       problemCount: questions.length
     };
-    const urlParams = new URLSearchParams(window.location.search);
+      
     const doShuffle = urlParams.get('shuffle');
     const boolShuffle = (doShuffle === 'true');
     if (boolShuffle) {
@@ -284,7 +284,7 @@ function answerCheck(index) {
         
         answerText.classList.add('correct');
 
-        if (answerSubText.textContent === "不正解...") {
+        if (answerSubText.textContent !== "不正解...") {
           correctCount += 1;
         }
         
