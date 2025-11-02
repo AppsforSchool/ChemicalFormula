@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  touch-action: manipulation;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "BIZ UDGothic", sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+sub {
+  font-size: 0.7em;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#result-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#game-type {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+#grade,
+#shuffle {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+#game-mode {
+  justify-content: center;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ddd;
+}
+
+#time-text {
+  font-family: "Signika Negative", sans-serif;
+  font-weight: 500;
+  font-size: 4rem;
+}
+
+#correct-and-problem {
+  font-size: 2.5rem;
+}
+
+#correct-and-problem #correct-count {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.mini {
+  font-size: 70%;
+}
+
+#buttons-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+#return-button {
+  font-family: "BIZ UDGothic", sans-serif;
+  font-weight: 700;
+  
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  border: 2px solid #09a318;
+  border-radius: 8px;
+  background-color: #09a318;
+  color: white;
+  height: 100%;
+
+  touch-action: manipulation;
+  
+}
+
+#restart-button {
+  font-family: "BIZ UDGothic", sans-serif;
+  font-weight: 700;
+  
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  border: 2px solid #09a318;
+  border-radius: 8px;
+  background-color: #c7f2cc;
+  color: #09a318;
+
+  touch-action: manipulation;
+}
+
+#warning {
+  font-size: 0.75rem;
+}
+
+@media (max-width: 600px) {
+    .game-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+  
+    #buttons-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+  #buttons-container button {
+    width: 80%;
+    padding: 0.5rem;
+  }
+}
