@@ -292,6 +292,7 @@ function answerCheck(index) {
         if (questionsIndex + 1 === questions.length) {
           answerButton.textContent = "結果をみる";
           answerButton.classList.add('toResult');
+          alert('リザルトボタンを設定');
         } else {
           answerButton.textContent = "次の問題";
           answerButton.classList.add('nextQuestion');
