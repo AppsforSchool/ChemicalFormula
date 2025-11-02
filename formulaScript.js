@@ -245,7 +245,7 @@ function answerCheck(index) {
       resultData.shuffle = 'true';
     }
     localStorage.setItem('resultData', JSON.stringify(resultData));
-    alert('リザルト画面へ遷移');
+    //alert('リザルト画面へ遷移');
     window.location.href = 'result.html';
   } else {
     const nextButton = answerButton.classList.contains('nextQuestion');
@@ -292,7 +292,7 @@ function answerCheck(index) {
         if (questionsIndex + 1 === questions.length) {
           answerButton.textContent = "結果をみる";
           answerButton.classList.add('toResult');
-          alert('リザルトボタンを設定');
+          //alert('リザルトボタンを設定');
         } else {
           answerButton.textContent = "次の問題";
           answerButton.classList.add('nextQuestion');
