@@ -27,23 +27,7 @@ function deleteResult() {
   localStorage.removeItem('resultData');
 }
 
-const restartButton = document.getElementById('restart-button');
-restartButton.addEventListener('click', () => {
-  if (restartButton.classList.contains('inactive')) {
-    alert('データの取得に失敗したため、このボタンは使えません。');
-  } else {
-    const settingsString = localStorage.getItem('resultData');
-    const settingsObject = JSON.parse(settingsString);
-    
-    const params = new URLSearchParams();
-    settingsObject.grade.forEach(g => {
-      params.append('grade', g);
-    });
-    params.append('shuffle', settingsObject.shuffle); 
-    //console.log(`formula.html?${params}`);
-    window.location.href = `formula.html?${params}`;
-  }
-});
+
 
 const returnButton = document.getElementById('return-button');
 returnButton.addEventListener('click', () => {
@@ -90,4 +74,24 @@ document.addEventListener('DOMContentLoaded', () => {
     
     localStorage.removeItem('resultData');
   }
+
+  const restartButton = document.getElementById('restart-button');
+  restartButton.addEventListener('click', () => {
+    if (restartButton.classList.contains('inactive')) {
+      alert('データの取得に失敗したため、このボタンは使えません。');
+    } else {
+      const params = new URLSearchParams();
+      settingsObject.grade.forEach(g => {
+        params.append('grade', g);
+      });
+      params.append('shuffle', settingsObject.shuffle); 
+      //console.log(`formula.html?${params}`);
+      window.location.href = `formula.html?${params}`;
+    }
+  });
+
+  const returnButton = document.getElementById('return-button');
+  returnButton.addEventListener('click', () => {
+    window.location.href = 'index.html';
+  });
 });
