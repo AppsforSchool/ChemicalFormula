@@ -232,12 +232,12 @@ function answerCheck(index) {
   const resultButton = answerButton.classList.contains('toResult');
   if (resultButton) {
     let resultData = {
-        gameType: 'formula',
-        shuffle: 'false',
-        grade: urlParams.getAll('grade'),
-        correctCount: correctCount,
-        problemCount: questions.length
-      };
+      gameType: 'formula',
+      shuffle: 'false',
+      grade: urlParams.getAll('grade'),
+      correctCount: correctCount,
+      problemCount: questions.length
+    };
     const urlParams = new URLSearchParams(window.location.search);
     const doShuffle = urlParams.get('shuffle');
     const boolShuffle = (doShuffle === 'true');
@@ -245,6 +245,7 @@ function answerCheck(index) {
       resultData.shuffle = 'true';
     }
     localStorage.setItem('resultData', JSON.stringify(resultData));
+    alert('リザルト画面へ遷移');
     window.location.href = 'result.html';
   } else {
     const nextButton = answerButton.classList.contains('nextQuestion');
