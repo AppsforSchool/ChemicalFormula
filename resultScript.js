@@ -88,6 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const problemCountArea = document.getElementById('problem-count');
     problemCountArea.textContent = settingsObject.problemCount;
     
-    //localStorage.removeItem('resultData');
+    localStorage.removeItem('resultData');
   }
 });
