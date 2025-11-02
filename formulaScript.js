@@ -233,7 +233,7 @@ function answerCheck(index) {
   if (resultButton) {
     let resultData = {
         gameType: 'formula',
-        shuffle: false,
+        shuffle: 'false',
         grade: urlParams.getAll('grade'),
         correctCount: correctCount,
         problemCount: questions.length
@@ -242,7 +242,7 @@ function answerCheck(index) {
     const doShuffle = urlParams.get('shuffle');
     const boolShuffle = (doShuffle === 'true');
     if (boolShuffle) {
-      resultData.shuffle = true;
+      resultData.shuffle = 'true';
     }
     localStorage.setItem('resultData', JSON.stringify(resultData));
     window.location.href = 'result.html';
